@@ -26,10 +26,15 @@ const CompaniesList = () => {
     <div className="flex flex-col items-center p-4 gap-4 w-9/12">
       {/* Companies table or List */}
       <button onClick={() => setCard(!card)}>Toggle Data</button>
-
-      <div className="flex flex-wrap">
-        {data.map((company) => (card ? <CompaniesCard key={company.id} data={company} /> : <CompaniesTable key={company.id} />))}
-      </div>
+      {card ? (
+        <div className="flex flex-wrap">
+          {data.map((company) => (
+            <CompaniesCard key={company.id} data={company} />
+          ))}
+        </div>
+      ) : (
+        <CompaniesTable data={data} />
+      )}
     </div>
   );
 };
