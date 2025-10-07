@@ -1,4 +1,4 @@
-export const data = [
+export const CompaniesData = [
   {
     id: 1,
     name: "Flipkart",
