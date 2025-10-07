@@ -1,4 +1,3 @@
-import "./App.css";
 import CompaniesList from "./components/companies/CompaniesList";
 import FilterPanel from "./components/filters/FilterPanel";
 import Header from "./components/Header";
