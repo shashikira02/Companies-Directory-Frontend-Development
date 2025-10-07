@@ -3,7 +3,7 @@ import Dropdown from "./Dropdown"
 
 const FilterPanel = () => {
   return (
-    <div>
+    <div className="flex flex-col items-center p-4">
         <Input />
         <p>Dropdown filters logic</p>
         <Dropdown/>

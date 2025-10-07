@@ -1,16 +1,10 @@
-import CompaniesList from "./components/companies/CompaniesList";
-import FilterPanel from "./components/filters/FilterPanel";
-import Header from "./components/Header";
-import Pagination from "./components/pagination/Pagination";
+
+import Body from './components/Body'
 
 function App() {
   return (
     <>
-      <Header />  
-      <FilterPanel />
-
-      <CompaniesList />
-      <Pagination/>
+    <Body />
     </>
   );
 }
