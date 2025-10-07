@@ -1,10 +1,8 @@
-import React from 'react'
+import Button from '@mui/material/Button';
 
-const Button = () => {
+const Button = ({children, onClick}) => {
   return (
-    <div>
-      button
-    </div>
+    <Button color="secondary" onClick={onClick} >{children}</Button>
   )
 }
 

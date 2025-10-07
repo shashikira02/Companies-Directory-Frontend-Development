@@ -1,9 +1,13 @@
-import React from 'react'
-
-const Input = () => {
+const Input = ({ value, onSearch }) => {
   return (
-    <div>
-      input
+    <div className="w-full">
+      <input 
+        type="text" 
+        value={value}
+        className="border border-gray-200 w-full rounded p-2" 
+        placeholder="Search companies by name..."
+        onChange={(e) => onSearch(e.target.value)} 
+      />
     </div>
   )
 }

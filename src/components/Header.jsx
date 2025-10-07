@@ -1,8 +1,8 @@
 const Header = ()=> {
     return (
-        <div className="flex flex-col items-center p-4" >
-            <h1>Header</h1>
-        </div>
+        <header className="flex flex-col items-center p-6" >
+            <h1 className="font-bold text-4xl">Companies Directory</h1>
+        </header>
     )
 }
 
