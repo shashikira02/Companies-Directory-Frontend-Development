@@ -1,39 +1,55 @@
-import { useEffect, useState } from "react";
 import CompaniesCard from "./CompaniesCard";
 import CompaniesTable from "./CompaniesTable";
-import { CompaniesData } from "../../utils/data";
+import Loader from "../common/Loader";
+import { useCompaniesContext } from "../../hooks/useCompaniesContext";
 
 const CompaniesList = () => {
   // toggling to cards or Table
-  const [data, setData] = useState([]);
-  const [card, setCard] = useState(false);
+  const { loading, error, toggleMode, getCurrentPageData, filteredCompanies } =
+    useCompaniesContext();
 
-  useEffect(() => {
-    fetchData();
-  }, []);
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center min-h-60">
+        <Loader />
+      </div>
+    );
+  }
 
-  const fetchData = async () => {
-    try {
-      const data = CompaniesData;
-      setData(data);
-      // console.log(data);
-    } catch (err) {
-      console.error("Error fetching data:", err);
-    }
-  };
+  if (error) {
+    return (
+      <div className="flex justify-center items-center min-h-60">
+        <div className="text-red-500 text-xl mb-3">
+          Error Loading Companies Data
+        </div>
+        <div className="text-gray-500">{error}</div>
+      </div>
+    );
+  }
+
+  const currentPageData = getCurrentPageData();
+
+  if (filteredCompanies.length === 0) {
+    return (
+      <div className="flex justify-center items-center min-h-60">
+        <div className="text-gray-500 text-xl mb-3">No Companies Found</div>
+      </div>
+    );
+  }
 
   return (
     <div className="flex flex-col items-center p-4 gap-4 w-9/12">
       {/* Companies table or List */}
-      <button onClick={() => setCard(!card)}>Toggle Data</button>
-      {card ? (
+      {toggleMode === "card" ? (
         <div className="flex flex-wrap">
-          {data.map((company) => (
+          {/* Card View */}
+          {currentPageData.map((company) => (
             <CompaniesCard key={company.id} data={company} />
           ))}
         </div>
       ) : (
-        <CompaniesTable data={data} />
+        // Table View
+        <CompaniesTable data={currentPageData} />
       )}
     </div>
   );

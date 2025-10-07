@@ -1,11 +1,11 @@
-const Input = ({ value, onSearch }) => {
+const Input = ({ value, onSearch, placeholder }) => {
   return (
-    <div className="w-full">
+    <div className="w-full mb-4">
       <input 
         type="text" 
         value={value}
         className="border border-gray-200 w-full rounded p-2" 
-        placeholder="Search companies by name..."
+        placeholder={placeholder}
         onChange={(e) => onSearch(e.target.value)} 
       />
     </div>
