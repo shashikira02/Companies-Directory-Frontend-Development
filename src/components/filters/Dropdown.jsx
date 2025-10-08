@@ -11,6 +11,8 @@ const Dropdown = ({
 }) => {
 
   return (
+    <div className="flex flex-col " >
+    <p className="text-gray-700 text-sm font-medium text-left" >{label}</p>
     <FormControl
       size={size}
       fullWidth
@@ -47,6 +49,7 @@ const Dropdown = ({
         ))}
       </Select>
     </FormControl>
+    </div>
   );
 };
 
