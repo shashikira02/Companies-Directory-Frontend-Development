@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 
 const Loader = () => {
   return (
-    <Box sx={{ display: 'flex' }}>
+    <Box sx={{ display: 'flex', justifyContent: 'center', p:4 }}>
       <CircularProgress />
     </Box>
   )

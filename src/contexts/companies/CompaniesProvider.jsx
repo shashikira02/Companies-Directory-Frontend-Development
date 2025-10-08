@@ -34,6 +34,7 @@ export const CompaniesProvider = ({ children }) => {
   const [itemsPerPage, setItemsPerPage] = useState(initialState.itemsPerPage);
   const [totalPages, setTotalPages] = useState(initialState.totalPages);
 
+  //load data or when items/page changes
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -50,7 +51,7 @@ export const CompaniesProvider = ({ children }) => {
     fetchData();
   }, [itemsPerPage]);
 
-  // filter data on initial render 
+  // filter data when any filter changes 
   useEffect(() => {
     const filtered = filterCompanies(companies, filters);
     setFilteredCompanies(filtered);
@@ -58,15 +59,17 @@ export const CompaniesProvider = ({ children }) => {
     setTotalPages(Math.ceil(filtered.length / itemsPerPage));
   }, [filters, companies, itemsPerPage]);
 
+  // reset page to 1 if any filters change 
   useEffect(() => {
     setCurrentPage(1);
   }, [filters, companies]);
 
+  // updating filters state
   const updateFilters = useCallback((newFilters) => {
     setFilters((prev) => ({ ...prev, ...newFilters }));
   }, []);
 
-  // reverting to initial state 
+  // clear filters to initial state 
   const clearFilters = useCallback(() => {
     setFilters(initialState.filters);
     setFilteredCompanies(companies);

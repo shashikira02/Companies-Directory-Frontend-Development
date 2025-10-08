@@ -2,7 +2,7 @@ import Button from '@mui/material/Button';
 
 const ButtonEle = ({children, onClick}) => {
   return (
-    <Button color="secondary" onClick={onClick} >{children}</Button>
+    <Button variant='contained' onClick={onClick} >{children}</Button>
   )
 }
 

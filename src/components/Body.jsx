@@ -1,16 +1,18 @@
 import CompaniesList from "./companies/CompaniesList";
 import FilterPanel from "./filters/FilterPanel";
 import Header from "./Header";
-import Pagination from "./pagination/Pagination";
+import PaginationEle from "./pagination/Pagination";
 
 const Body = () => {
   return (
-    <div>
+    <main className="min-h-screen bg-gray-100">
       <Header />
-      <FilterPanel />
-      <CompaniesList />
-      <Pagination />
-    </div>
+      <div className="container mx-auto px-6 py-4 max-w-7xl" >
+        <FilterPanel />
+        <CompaniesList />
+        <PaginationEle />
+      </div>
+    </main>
   );
 };
 
