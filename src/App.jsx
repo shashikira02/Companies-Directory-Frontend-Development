@@ -1,4 +1,3 @@
-
 import Body from './components/Body'
 import { CompaniesProvider } from './contexts/companies/CompaniesProvider';
 
