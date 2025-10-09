@@ -1,6 +1,6 @@
 # Companies Directory
 
-A modern, frontend React application for a Companies Directory, styled with Tailwind CSS and Material UI to provide a clean and responsive user interface.
+A modern frontend React application for a Companies Directory, styled with Tailwind CSS and Material UI to provide a clean and responsive user interface.
 It allows users to browse and filter company data effectively
 
 ---
@@ -28,7 +28,7 @@ The webpage is designed for an efficient and user-friendly experience. It includ
 ## Features
 
 - **Filter Section**  
-  Multiple filters allow users to narrow down company listings. A "Clear all filters" button resets all selections.
+  Multiple filters to allow users to narrow down company listings. A "Clear all filters" button resets all selections.
   
 - **Toggle View**  
   Users can switch between card layout and table layout for viewing companies.
@@ -60,11 +60,11 @@ The webpage is designed for an efficient and user-friendly experience. It includ
   - `utils/` for utility functions including filtering helpers  
 
 - **Data Handling:**  
-  - Uses a static data file to simulate company data.  
-  - Implements loading and error handling states while fetching or processing data.
+  - A static data file to simulate company data.  
+  - Implemented loading and error handling states while fetching or processing data.
 
 - **State Management:**  
-  - Uses React Context API as a centralized store to avoid prop drilling and improve performance.  
+  - Useing React Context API as a centralized store to avoid prop drilling and improve performance.  
   - Initial filter states are set in a context through an `initialState` object.  
   - React hooks such as `useState`, `useEffect`, `useCallback`, and `useMemo` are used to manage filtered data, side effects, and memoization to prevent unnecessary re-renders.  
   - A custom hook is created for easy access and update of the context data.
@@ -73,7 +73,7 @@ The webpage is designed for an efficient and user-friendly experience. It includ
   - Dropdowns are used for other filters to select industry, location, size, etc.
 
 - **UI Rendering:**  
-  - Card layout and table layout rendering follow a similar pattern: looping through data and dynamically populating components or table rows.  
+  - Card layout and table layout rendering follow a similar pattern: looping through data and dynamically populating Cards or Table rows.  
 
 - **Pagination:**  
   Data is rendered in smaller chunks based on pagination settings for optimal initial rendering speed and user experience.
