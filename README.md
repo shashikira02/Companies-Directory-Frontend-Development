@@ -64,7 +64,7 @@ The webpage is designed for an efficient and user-friendly experience. It includ
   - Implemented loading and error handling states while fetching or processing data.
 
 - **State Management:**  
-  - Useing React Context API as a centralized store to avoid prop drilling and improve performance.  
+  - Using React Context API as a centralized store to avoid prop drilling and improve performance.  
   - Initial filter states are set in a context through an `initialState` object.  
   - React hooks such as `useState`, `useEffect`, `useCallback`, and `useMemo` are used to manage filtered data, side effects, and memoization to prevent unnecessary re-renders.  
   - A custom hook is created for easy access and update of the context data.
